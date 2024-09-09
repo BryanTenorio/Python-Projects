@@ -57,3 +57,59 @@ df["Phone_Number"] = df["Phone_Number"].str.replace('[^0-9]', '', regex=True)
 df["Phone_Number"] = df["Phone_Number"].apply(lambda x: x[:3] + '-' + x[3:6] + '-' + x[6:])
 ```
 [Ver archivo completo](data_Cleaning_in_pandas.ipynb)
+
+## 2. Análisis Exploratorio de Datos (EDA)
+El análisis exploratorio de datos (EDA) se realiza para obtener insights importantes del dataset `World Population`. Se utilizan técnicas estadísticas y visualizaciones para explorar la distribución de la población a nivel mundial.
+
+### Pasos Realizados
+
+- **Visualización General de los Datos**: Exploración de las principales columnas y estadísticas descriptivas.
+- **Mapa de Calor de Correlaciones**: Análisis de la correlación entre las diferentes columnas del dataset.
+- **Gráficos de Caja**: Representación de los valores de la población a través de los años.
+- **Agrupación por Continentes**: Promedio de la población de cada continente por año.
+- **Gráficas de Evolución**: Visualización de la evolución de la población en diferentes continentes desde 1970.
+
+### Ejemplo: Mapa de Calor de Correlaciones
+```python
+sns.heatmap(df.corr(), annot=True)
+plt.show()
+```
+### Ejemplo: Gráfica de la Evolución de la Población por Continente
+```python
+df2 = df.groupby('Continent')[['1970 Population', '2022 Population']].mean()
+df2.transpose().plot()
+plt.show()
+```
+[Ver archivo completo](exploratory_data_analysis.ipynb)
+
+## Conclusiones
+A través de estos proyectos se logró limpiar y estandarizar los datos de los clientes, eliminando información duplicada y corrigiendo valores inconsistentes. En el análisis exploratorio de la población mundial, se identificaron tendencias significativas y patrones de crecimiento poblacional a lo largo de los años.
+
+## Herramientas Utilizadas
+- **Pandas**: Para la manipulación y limpieza de los datos.
+- **Seaborn y Matplotlib**: Para la visualización de datos.
+- **Python**: Lenguaje de programación utilizado en ambos proyectos.
+
+## Sobre el Autor
+
+Mi nombre es Jhon Tenorio y este repositorio es parte de mi portafolio como Analista de Datos. Se encontrara con secciones para la limpieza de datos y el análisis exploratorio de datos, en Python visita mi [perfil de GitHub](https://github.com/BryanTenorio).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
