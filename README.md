@@ -50,7 +50,10 @@ En este proyecto se realiza la limpieza de los datasets mencionados utilizando P
 ### Ejemplo: Remover Duplicados en Pandas
 ```python
 df = df.drop_duplicates()
-
+```
+### Ejemplo: Estandarización de Números de Teléfono
+```python
 df["Phone_Number"] = df["Phone_Number"].str.replace('[^0-9]', '', regex=True)
 df["Phone_Number"] = df["Phone_Number"].apply(lambda x: x[:3] + '-' + x[3:6] + '-' + x[6:])
-
+```
+[Ver archivo completo](data_Cleaning_in_pandas.ipynb)
